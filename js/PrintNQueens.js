@@ -1,9 +1,9 @@
 "use strict"
 
-import addQueen from "/js/AddQueen.js"; // function to add the queenEmoji at the specified location on the chess board
-import removeQueen from "/js/RemoveQueen.js"; // function to remove the queenEmoji at the specified location on the chess board
-import cloneTableOfSizeN from "/js/CloneChessBoard.js"; // function to clone the last chess board in the N Queens Visualizer Section and display it
-import generateTableOfSizeN from "/js/GenerateChessBoard.js"; // function to generate a chess board of size n x n
+import addQueen from "./AddQueen.js"; // function to add the queenEmoji at the specified location on the chess board
+import removeQueen from "./RemoveQueen.js"; // function to remove the queenEmoji at the specified location on the chess board
+import cloneTableOfSizeN from "./CloneChessBoard.js"; // function to clone the last chess board in the N Queens Visualizer Section and display it
+import generateTableOfSizeN from "./GenerateChessBoard.js"; // function to generate a chess board of size n x n
 
 let countOfChessBoards = 1; // store the number of solutions
 

@@ -1,13 +1,13 @@
 "use strict"
 
-import generateTableOfSizeN from "/js/GenerateChessBoard.js"; // function to generate a chess board of size n x n
+import generateTableOfSizeN from "./GenerateChessBoard.js"; // function to generate a chess board of size n x n
 /** PrintNQueens.js
   * setCountOfChessBoards: sets the value of countOfChessBoards in PrintNQueens.js
   * clearAnimationsArr: clears animationsArr in PrintQueens.js
   * getAnimationsArr: function that returns an array of animation functions with parameters to visualize the solution algorithm
  */
-import { setCountOfChessBoards, clearAnimationsArr, getAnimationsArr } from "/js/PrintNQueens.js";
-import cloneTableOfSizeN from "/js/CloneChessBoard.js"; // function to clone a chess board of size n x n
+import { setCountOfChessBoards, clearAnimationsArr, getAnimationsArr } from "./PrintNQueens.js";
+import cloneTableOfSizeN from "./CloneChessBoard.js"; // function to clone a chess board of size n x n
 
 const valueOfNInputElement = document.getElementById("value-of-n"); // Value Of N
 const startButton = document.getElementById("start-visualization"); // Start Visualization Button
