@@ -1,0 +1,104 @@
+html
+{
+  text-align: center;
+  background-color: white;
+}
+
+main
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+main>section
+{
+  border: solid 1px;
+  padding: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  max-width: 50vw;
+  max-height: 50vh;
+  overflow: scroll;
+}
+
+#n-queens-visualizer-section
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+table
+{
+  border-collapse: collapse;
+  border: solid 1px;
+  margin: 25px;
+}
+
+tr
+{
+  border: solid 1px;
+}
+
+td
+{
+  border: solid 1px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+}
+
+tr:nth-of-type(2n)>td:nth-of-type(2n+1)
+{
+  background-color:lightgrey;
+}
+
+tr:nth-of-type(2n+1)>td:nth-of-type(2n)
+{
+  background-color:lightgrey;
+}
+
+#log-section
+{
+  padding: 0 25px 25px 25px;
+}
+
+#log-section p:not(p.blue-background)
+{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+p.blue-background
+{
+  color: white;
+  background-color: rgb(150, 150, 255);
+  margin-top: 35px;
+  margin-bottom: 5px;
+}
+
+p.red-background
+{
+  color: white;
+  background-color: rgb(255, 147, 97);
+}
+
+p.green-background
+{
+  color: white;
+  background-color: rgba(0, 196, 98, 0.8);
+}
+
+#log-section p:first-of-type
+{
+  position: sticky;
+  top: 0;
+  background-color: white;
+}

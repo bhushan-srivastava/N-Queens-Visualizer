@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The N-Queens problem is to place N-Queens on an NxN chessboard such that no queens attack each other. This project visualizes the solution algorithm.">
+    <meta name="keywords" content="N-Queens problem">
+    <meta name="robots" content="index, follow">
+
+    <!-- open graph meta tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="N-Queens Visualizer">
+    <meta property="og:url" content="http(s)://bhushan-srivastava.github.io/N-Queens-Visualizer.com">
+    <meta property="og:image" content="http(s)://some-image.com">
+    <meta property="og:description"
+        content="The N-Queens problem is to place N-Queens on an NxN chessboard such that no queens attack each other. This project visualizes the solution algorithm.">
+
+    <!-- twitter summary card meta tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="N-Queens Visualizer">
+    <meta name="twitter:description"
+        content="The N-Queens problem is to place N-Queens on an NxN chessboard such that no queens attack each other. This project visualizes the solution algorithm.">
+    <meta name="twitter:image" content="some-image-url">
+    <meta name="twitter:image:alt" content="image-alt-text">
+
+    <!-- twitter summary large image card meta tags -->
+    <!-- <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Document">
+    <meta name="twitter:description" content="description">
+    <meta name="twitter:image" content="some-image-url">
+    <meta name="twitter:image:alt" content="image-alt-text"> -->
+
+    <!-- title -->
+    <title>N-Queens Visualizer</title>
+
+    <!-- external style sheet -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <h1>
+            N-Queens Visualizer &#9813;
+        </h1>
+
+        <!-- horizontal rule -->
+        <hr>
+
+        <div>
+            <p>
+                The N - Queens problem is to place N - Queens on an N x N Chessboard in such a manner that no Queens
+                attack each other by being in the same row, column or diagonal.
+            </p>
+            <p>
+                Please scroll down the individual sections to see the different chess boards and their respective logs.
+            </p>
+        </div>
+    </header>
+
+    <!-- main section-->
+    <main>
+        <!-- algorithm visualizer section -->
+        <section id="algorithm-visualizer-section">
+            <!-- input section -->
+            <section>
+                <!-- Value Of N -->
+                <div>
+                    <label for="value-of-n">Value Of N:</label>
+                    <input id="value-of-n" type="number" min="1" placeholder="Enter a value"
+                        onkeyup="validity.valid||(value='');">
+                </div>
+
+                <!-- Start Visualization -->
+                <div>
+                    <button id="start-visualization">Start Visualization</button>
+                </div>
+            </section>
+
+            <!-- N-Queens Visualizer section -->
+            <section id="n-queens-visualizer-section">
+            </section>
+        </section>
+
+        <!-- log section -->
+        <section id="log-section">
+            <p>
+                Logs
+            </p>
+        </section>
+
+        <!-- javascript file -->
+        <script src="/js/App.js" type="module"></script>
+    </main>
+</body>
+
+</html>
