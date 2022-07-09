@@ -1,44 +1,52 @@
 html
 {
-  text-align: center;
   background-color: white;
+  text-align: center;
 }
 
 main
 {
+  align-items: flex-start;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: space-between;
 }
 
+/* any section which is a child of main */
 main>section
 {
   border: solid 1px;
-  padding: 25px;
   margin-left: 25px;
   margin-right: 25px;
   max-width: 50vw;
-  max-height: 50vh;
+  max-height: 55vh;
   overflow: scroll;
+  padding: 0 25px 25px 25px;
+}
+
+#input-section
+{
+  background-color: white;
+  position: sticky;
+  top: 0;
 }
 
 #n-queens-visualizer-section
 {
+  align-content: center;
+  align-items: center;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  align-items: center;
-  flex-wrap: wrap;
-  align-content: center;
 }
 
 table
 {
-  border-collapse: collapse;
   border: solid 1px;
+  border-collapse: collapse;
   margin: 25px;
 }
 
@@ -50,26 +58,24 @@ tr
 td
 {
   border: solid 1px;
-  width: 35px;
   height: 35px;
   text-align: center;
+  width: 35px;
 }
 
+/* even rows odd columns */
 tr:nth-of-type(2n)>td:nth-of-type(2n+1)
 {
   background-color:lightgrey;
 }
 
+/* odd rows even columns */
 tr:nth-of-type(2n+1)>td:nth-of-type(2n)
 {
   background-color:lightgrey;
 }
 
-#log-section
-{
-  padding: 0 25px 25px 25px;
-}
-
+/* paragraphs which do not have a class blue-background  and are inside a section of id log-section*/
 #log-section p:not(p.blue-background)
 {
   margin-top: 5px;
@@ -78,27 +84,40 @@ tr:nth-of-type(2n+1)>td:nth-of-type(2n)
 
 p.blue-background
 {
-  color: white;
   background-color: rgb(150, 150, 255);
+  color: white;
   margin-top: 35px;
   margin-bottom: 5px;
 }
 
 p.red-background
 {
-  color: white;
   background-color: rgb(255, 147, 97);
+  color: white;
 }
 
 p.green-background
 {
-  color: white;
   background-color: rgba(0, 196, 98, 0.8);
+  color: white;
 }
 
+/* first paragraph inside a section of id log-section */
 #log-section p:first-of-type
 {
+  background-color: white;
   position: sticky;
   top: 0;
-  background-color: white;
+}
+
+@media (max-width: 1180px) {
+  main
+  {
+    justify-content: center;
+  }
+
+  #log-section
+  {
+    margin-top: 25px;
+  }
 }

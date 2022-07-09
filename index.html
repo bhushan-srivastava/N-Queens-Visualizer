@@ -15,7 +15,8 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="N-Queens Visualizer">
     <meta property="og:url" content="http(s)://bhushan-srivastava.github.io/N-Queens-Visualizer.com">
-    <meta property="og:image" content="http(s)://some-image.com">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/bhushan-srivastava/N-Queens-Visualizer/main/images/favicon.png">
     <meta property="og:description"
         content="The N-Queens problem is to place N-Queens on an NxN chessboard such that no queens attack each other. This project visualizes the solution algorithm.">
 
@@ -24,8 +25,9 @@
     <meta name="twitter:title" content="N-Queens Visualizer">
     <meta name="twitter:description"
         content="The N-Queens problem is to place N-Queens on an NxN chessboard such that no queens attack each other. This project visualizes the solution algorithm.">
-    <meta name="twitter:image" content="some-image-url">
-    <meta name="twitter:image:alt" content="image-alt-text">
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/bhushan-srivastava/N-Queens-Visualizer/main/images/favicon.png">
+    <meta name="twitter:image:alt" content="Image of a crown">
 
     <!-- twitter summary large image card meta tags -->
     <!-- <meta name="twitter:card" content="summary_large_image">
@@ -47,13 +49,16 @@
 <body>
     <!-- header -->
     <header>
+        <!-- heading of the page -->
         <h1>
+            <!-- &#9813; is html emoji code for a crown emoji -->
             N-Queens Visualizer &#9813;
         </h1>
 
         <!-- horizontal rule -->
         <hr>
 
+        <!-- description of the page -->
         <div>
             <p>
                 The N - Queens problem is to place N - Queens on an N x N Chessboard in such a manner that no Queens
@@ -70,18 +75,15 @@
         <!-- algorithm visualizer section -->
         <section id="algorithm-visualizer-section">
             <!-- input section -->
-            <section>
-                <!-- Value Of N -->
-                <div>
-                    <label for="value-of-n">Value Of N:</label>
-                    <input id="value-of-n" type="number" min="1" placeholder="Enter a value"
-                        onkeyup="validity.valid||(value='');">
-                </div>
+            <section id="input-section">
+                <!-- input the Value Of N -->
+                <label for="value-of-n">Value Of N:</label>
+                <!-- number input with validation -->
+                <input id="value-of-n" type="number" min="1" placeholder="Enter a value"
+                    onkeyup="validity.valid||(value='');">
 
-                <!-- Start Visualization -->
-                <div>
-                    <button id="start-visualization">Start Visualization</button>
-                </div>
+                <!-- Start Visualization Button-->
+                <button id="start-visualization">Start Visualization</button>
             </section>
 
             <!-- N-Queens Visualizer section -->
