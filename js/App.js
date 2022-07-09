@@ -35,6 +35,8 @@ let animationsArr = new Array();
 // event listener for Start Visualization Button
 startButton.addEventListener("click", () => {
     if (valueOfNInputElement.value) {
+        // disable the Start Visualization Button to prevent multiple clicks
+        startButton.setAttribute("disabled", "disabled");
 
         n = valueOfNInputElement.value;
 
@@ -111,4 +113,8 @@ async function animateNQueens() {
         await delay(200); // create a delay to show the animation step-by-step
         functionArr[0](functionArr[1][0], functionArr[1][1], functionArr[1][2]); // call the function with its respective parameters
     }
+
+    await delay(200); // create a delay after the animation is over 
+
+    startButton.removeAttribute("disabled"); // enable the Start Visualization Button to prevent multiple clicks
 }
