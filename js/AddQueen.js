@@ -15,7 +15,7 @@ export default function addQueen(row, col, count) {
   cell.innerHTML = queenEmoji; // display the queenEmoji in the cell
 
   const pTag = document.createElement("p"); // create a new <p> tag for the Log Section
-  pTag.innerHTML = "Add Queen at position " + (row + 1) + "," + (col + 1) + " on Board Number " + count; // add the contents of the <p> tag
+  pTag.innerHTML = "Add a Queen at position " + (row + 1) + "," + (col + 1) + " on Board Number " + count; // add the contents of the <p> tag
   pTag.setAttribute("class", "green-background"); // add a class of green-background to the <p> tag
   logSection.appendChild(pTag); // add the <p> tag to the Log Section
 
