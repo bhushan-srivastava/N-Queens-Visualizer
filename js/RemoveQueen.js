@@ -14,7 +14,7 @@ export default function removeQueen(row, col, count) {
   cell.innerHTML = ""; // remove the queenEmoji from the cell
 
   const pTag = document.createElement("p");// create a new <p> tag for the Log Section
-  pTag.innerHTML = "Remove Queen at position " + (row + 1) + "," + (col + 1) + " on Board Number " + count;// add the contents of the <p> tag
+  pTag.innerHTML = "Remove the Queen at position " + (row + 1) + "," + (col + 1) + " on Board Number " + count;// add the contents of the <p> tag
   pTag.setAttribute("class", "red-background");// add a class of red-background to the <p> tag
   logSection.appendChild(pTag);// add the <p> tag to the Log Section
 
