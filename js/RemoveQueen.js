@@ -11,7 +11,7 @@ const logSection = document.getElementById("log-section"); // Log Section
 export default function removeQueen(row, col, count) {
   // get the table cell by it id Eg. id = "table-1-row-1-col-1" will get the cell at the top left corner in the first table
   const cell = document.getElementById("table-" + count + "-row-" + (row + 1) + "-col-" + (col + 1));
-  cell.innerHTML = ""; // display the queenEmoji in the cell
+  cell.innerHTML = ""; // remove the queenEmoji from the cell
 
   const pTag = document.createElement("p");// create a new <p> tag for the Log Section
   pTag.innerHTML = "Remove Queen at position " + (row + 1) + "," + (col + 1) + " on Board Number " + count;// add the contents of the <p> tag
