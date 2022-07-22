@@ -30,6 +30,9 @@ main>section
   background-color: white;
   position: sticky;
   top: 0;
+  -webkit-box-shadow: 0px 5px 5px -5px black;
+  -moz-box-shadow: 0px 5px 5px -5px black;
+  box-shadow: 0px 5px 5px -5px black;
 }
 
 #n-queens-visualizer-section
@@ -108,6 +111,9 @@ p.green-background
   background-color: white;
   position: sticky;
   top: 0;
+  -webkit-box-shadow: 0px 5px 5px -5px black;
+  -moz-box-shadow: 0px 5px 5px -5px black;
+  box-shadow: 0px 5px 5px -5px black;
 }
 
 @media (max-width: 1180px) {
