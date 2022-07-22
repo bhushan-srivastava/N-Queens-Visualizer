@@ -46,7 +46,7 @@ startButton.addEventListener("click", () => {
 
         resetLogSection(); // reset the Log Section to show only the title "Logs"
 
-        generateTableOfSizeN(n, 1, null); // display a chess board of size n x n
+        generateTableOfSizeN(n, 1); // display a chess board of size n x n
 
         setCountOfChessBoards(1); //set countOfChessBoard to 1 in PrintNQueens.js
         clearAnimationsArr(); // clears animationsArr in PrintQueens.js
@@ -110,8 +110,11 @@ async function animateNQueens() {
 
     // access each array in animationsArr in the order it is stored in the animationsArr
     for (let functionArr of animationsArr) {
+        let animationFunction = functionArr[0]; // animation function
+        let args = functionArr[1]; // args of the respective function in animationFunction
+
         await delay(200); // create a delay to show the animation step-by-step
-        functionArr[0](functionArr[1][0], functionArr[1][1], functionArr[1][2]); // call the function with its respective parameters
+        animationFunction(...args); // call the function with its respective parameters
     }
 
     await delay(200); // create a delay after the animation is over 

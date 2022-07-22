@@ -4,15 +4,12 @@ const algorithmVisualizerSection = document.getElementById("algorithm-visualizer
 const nQueensVisualizerSection = document.getElementById("n-queens-visualizer-section"); // N Queens Visualizer Section
 const logSection = document.getElementById("log-section"); // Log Section
 
-/** cloneTableOfSizeN(n, count, nullParameter)
+/** cloneTableOfSizeN(n, count)
   * clone the last chess board in the N Queens Visualizer Section and display it
   * n: size of the chess board
   * count: table number for the cloned table (used to assign a new id to the cloned table)
-  * tempParameter: for easy implementaion of animation
-  * addQueen() and removeQueen() both use three parameters each and cloneTableOfSizeN() uses only two parameters 
-  * so to make the animation loop less complicated, add a third parameter to cloneTableOfSizeN() and pass null to it
   */
-export default function cloneTableOfSizeN(n, count, nullParameter) {
+export default function cloneTableOfSizeN(n, count) {
     // get the last table and store it
     const node = nQueensVisualizerSection.lastChild;
 

@@ -4,15 +4,12 @@ const algorithmVisualizerSection = document.getElementById("algorithm-visualizer
 const nQueensVisualizerSection = document.getElementById("n-queens-visualizer-section"); // N Queens Visualizer Section
 const logSection = document.getElementById("log-section"); // Log Section
 
-/** generateTableOfSizeN(n, count, nullParameter)
+/** generateTableOfSizeN(n, count)
   * display a chess board of size n x n and display it in the N Queens Visualizer Section
   * n: size of the chess board
   * count: table number for the new table (used to assign an id to the new table)
-  * tempParameter: for easy implementaion of animation
-  * addQueen() and removeQueen() both use three parameters each and generateTableOfSizeN() uses only two parameters 
-  * so to make the animation loop less complicated, add a third parameter to generateTableOfSizeN() and pass null to it
   */
-export default function generateTableOfSizeN(n, count, nullParameter) {
+export default function generateTableOfSizeN(n, count) {
     // create a <table> element
     const tbl = document.createElement("table");
     // assign a new id to it

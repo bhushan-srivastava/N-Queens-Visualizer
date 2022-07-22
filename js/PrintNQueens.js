@@ -72,7 +72,7 @@ function printNQueens(chess, qsf, row) {
         // increase the count of chess boards as we are about to make a new chess board and try to find another solution for the N-Queens Problem
         countOfChessBoards++;
         // add cloneTableOfSizeN function which will clone the last chess board and display it
-        animationsArr.push([cloneTableOfSizeN, [chess.length, countOfChessBoards, null]]);
+        animationsArr.push([cloneTableOfSizeN, [chess.length, countOfChessBoards]]);
 
         return;
     }
