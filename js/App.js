@@ -84,7 +84,12 @@ function resetLogSection() {
 
     const pTag = document.createElement("p"); // create a new <p> tag
     pTag.innerHTML = "Logs"; // <p>Logs</p>
-    logSection.appendChild(pTag); // add the <p>Logs</p> to the Log Section
+
+    const hrTag = document.createElement("hr"); // create a new <hr> tag
+
+    pTag.appendChild(hrTag); // <p>Logs <hr></p>
+
+    logSection.appendChild(pTag); // add the <p>Logs <hr></p> to the Log Section
 }
 
 // create a delay using promise
