@@ -5,12 +5,14 @@ import removeQueen from "./RemoveQueen.js"; // function to remove the queenEmoji
 import cloneTableOfSizeN from "./CloneChessBoard.js"; // function to clone the last chess board in the N Queens Visualizer Section and display it
 import generateTableOfSizeN from "./GenerateChessBoard.js"; // function to generate a chess board of size n x n
 
-let countOfChessBoards = 1; // store the number of solutions
+/** store the number of solutions */
+let countOfChessBoards = 1;
 
-/** animationsArr
-  * stores cloneTableOfSizeN, addQueen and removeQueen functions and their parameters in the required order for the animation
-  * animationsArr = 
-    [
+/**
+ * Store the animation functions and their respective args
+ * 
+ * animationsArr = [
+ * 
         [function1, [parameter1, parameter2,....parameterN]],
         [function2, [parameter1, parameter2,....parameterN]],
                             .
@@ -22,20 +24,31 @@ let countOfChessBoards = 1; // store the number of solutions
  */
 let animationsArr = new Array();
 
-// set the value of countOfChessBoards
+/**
+ * Set the value of countOfChessBoards
+ * @param {Number} valueToSet 
+ */
 function setCountOfChessBoards(valueToSet) {
     countOfChessBoards = valueToSet;
 }
 
-// clear animationsArr
+/**
+ * Clear animationsArr
+ */
 function clearAnimationsArr() {
     animationsArr = new Array();
 }
 
-// function that returns an array of animation functions with parameters to visualize the solution algorithm
-function getAnimationsArr(matrix, queenSoFar, r) {
+/**
+ * Function that returns an array of animation functions with parameters to visualize the solution algorithm
+ * @param {Number[]} matrix Array of N x N
+ * @param {String} queenSoFar String that represents all the locations where a queen is currently placed
+ * @param {Number} row Current row of the chess board where we are trying to place a queen
+ * @returns The array with animation functions and their respective parameters
+ */
+function getAnimationsArr(matrix, queenSoFar, row) {
     // recursive solution algorithm for the N-Queens Problem
-    printNQueens(matrix, queenSoFar, r);
+    printNQueens(matrix, queenSoFar, row);
 
     // return the array with animation functions and their respective parameters
     return animationsArr;
@@ -56,10 +69,12 @@ function getAnimationsArr(matrix, queenSoFar, r) {
     * Auxiliary Space Complexity: O(n)
   */
 
-/** printNQueens(chess, qsf, row)
-  * chess: n x n array denoting the chess board
-  * qsf: (queen so far) a string that represents all the locations where a queen is currently placed
-  * row: current row of the chess board where we are trying to place a queen
+/**
+ * Recursive solution algorithm for the N-Queens Problem
+ * @param {Number[]} chess N x N array denoting the chess board with 1's on the positions with a queen placed on them
+ * @param {String} qsf (queen so far) a string that represents all the locations where a queen is currently placed
+ * @param {Number} row Current row of the chess board where we are trying to place a queen
+ * @returns 
  */
 function printNQueens(chess, qsf, row) {
     //base case: there are no more rows left in the chess array i.e. we have seen n rows
@@ -97,7 +112,23 @@ function printNQueens(chess, qsf, row) {
     }
 }
 
-// check if the current row,col is a safe cell for the queen
+/**
+ * Check if the current row,col is a safe cell for the queen
+ * 
+ * A Queen can kill other Queens in all of the 8 directions possible (left, right, up, down, and all the 4 diagonals)
+ * 
+ * No 2 Queens can be in the same row
+ * 
+ * No 2 Queens can be in the same column
+ * 
+ * No 2 Queens can be in the left diagonal
+ * 
+ * No 2 Queens can be in the right diagonal
+ * @param {Number[]} chess N x N array denoting the chess board with 1's on the positions with a queen placed on them
+ * @param {Number} row Current row of the chess board where we are trying to place a queen
+ * @param {Number} col Current column of the chess board where we are trying to place a queen
+ * @returns {boolean} True if the cell at row,col is a safe cell for the queen
+ */
 function isQueenSafe(chess, row, col) {
     /** left diagonal 
       * check all the cells on the left diagonal only for rows above the current row as we have neither placed a queen on the current row nor the rows below

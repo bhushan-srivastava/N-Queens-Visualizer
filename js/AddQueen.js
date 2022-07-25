@@ -1,21 +1,23 @@
 "use strict"
 
-const logSection = document.getElementById("log-section"); // Log Section
-const queenEmoji = "&#9813;"; // html emoji code for a crown emoji
+/** Log Section */
+const logSection = document.getElementById("log-section");
+/** html emoji code for a crown emoji */
+const queenEmoji = "&#9813;";
 
-/** addQueen(row, col, count)
-  * display the queenEmoji at the specified location
-  * row: the row in the table where the queenEmoji is to be displayed
-  * col: the column in the table where the queenEmoji is to be displayed
-  * count: table number where the queenEmoji is to be dispalyed
+/**
+ * Display the queenEmoji at the specified location
+ * @param {Number} row Row where the queen is supposed to be added
+ * @param {Number} col Column where the queen is supposed to be added
+ * @param {Number} tableNumber Table number where the queen is supposed to be added
  */
-export default function addQueen(row, col, count) {
+export default function addQueen(row, col, tableNumber) {
   // get the table cell by it id Eg. id = "table-1-row-1-col-1" will get the cell at the top left corner in the first table
-  const cell = document.getElementById("table-" + count + "-row-" + (row + 1) + "-col-" + (col + 1));
+  const cell = document.getElementById("table-" + tableNumber + "-row-" + (row + 1) + "-col-" + (col + 1));
   cell.innerHTML = queenEmoji; // display the queenEmoji in the cell
 
   const pTag = document.createElement("p"); // create a new <p> tag for the Log Section
-  pTag.innerHTML = "Add a Queen at position " + (row + 1) + "," + (col + 1) + " on Board Number " + count; // add the contents of the <p> tag
+  pTag.innerHTML = "Add a Queen at position " + (row + 1) + "," + (col + 1) + " on Board Number " + tableNumber; // add the contents of the <p> tag
   pTag.setAttribute("class", "green-background"); // add a class of green-background to the <p> tag
   logSection.appendChild(pTag); // add the <p> tag to the Log Section
 
@@ -23,7 +25,10 @@ export default function addQueen(row, col, count) {
   scrollToBottom(logSection);
 }
 
-// scroll to the bottom of a section
+/**
+ * Scroll to the bottom of the given node
+ * @param {HTMLElement} node
+ */
 function scrollToBottom(node) {
   node.scrollTop = node.scrollHeight;
 }

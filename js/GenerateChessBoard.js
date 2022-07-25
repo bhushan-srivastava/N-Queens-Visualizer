@@ -1,24 +1,27 @@
 "use strict"
 
-const algorithmVisualizerSection = document.getElementById("algorithm-visualizer-section"); // Algorithm Visualizer Section
-const nQueensVisualizerSection = document.getElementById("n-queens-visualizer-section"); // N Queens Visualizer Section
-const logSection = document.getElementById("log-section"); // Log Section
+/** Algorithm Visualizer Section */
+const algorithmVisualizerSection = document.getElementById("algorithm-visualizer-section");
+/** N Queens Visualizer Section */
+const nQueensVisualizerSection = document.getElementById("n-queens-visualizer-section");
+/** Log Section */
+const logSection = document.getElementById("log-section");
 
-/** generateTableOfSizeN(n, count)
-  * display a chess board of size n x n and display it in the N Queens Visualizer Section
-  * n: size of the chess board
-  * count: table number for the new table (used to assign an id to the new table)
-  */
-export default function generateTableOfSizeN(n, count) {
+/**
+ * Display a chess board of size n x n and display it in the N Queens Visualizer Section
+ * @param {Number} n Size of the chess board
+ * @param {Number} tableNumber Table number for the new table (used to assign an id to the new table)
+ */
+export default function generateTableOfSizeN(n, tableNumber) {
     // create a <table> element
     const tbl = document.createElement("table");
     // assign a new id to it
-    tbl.setAttribute("id", "chess-board-" + count);
+    tbl.setAttribute("id", "chess-board-" + tableNumber);
 
     // create a new <caption> element
     const tblCaption = document.createElement("caption");
     // assign a new id to it
-    tblCaption.innerHTML = "Chessboard - " + count + " of size " + n + " x " + n;
+    tblCaption.innerHTML = "Chessboard - " + tableNumber + " of size " + n + " x " + n;
     // add the <caption> tag to the <table> tag
     tbl.appendChild(tblCaption);
 
@@ -30,14 +33,14 @@ export default function generateTableOfSizeN(n, count) {
         // create a table row
         const row = document.createElement("tr");
         // assign a new id to it
-        row.setAttribute("id", "table-" + count + "-row-" + (i + 1));
+        row.setAttribute("id", "table-" + tableNumber + "-row-" + (i + 1));
 
         // create n columns in the ith row
         for (let j = 0; j < n; j++) {
             // create a <td> element
             const cell = document.createElement("td");
             // assign a new id to it
-            cell.setAttribute("id", "table-" + count + "-row-" + (i + 1) + "-col-" + (j + 1));
+            cell.setAttribute("id", "table-" + tableNumber + "-row-" + (i + 1) + "-col-" + (j + 1));
 
             // add the <td> at the end of the table row
             row.appendChild(cell);
@@ -58,7 +61,7 @@ export default function generateTableOfSizeN(n, count) {
     // add a class "blue-background" to it
     pTag.setAttribute("class", "blue-background");
     // add the contents of the <p> tag
-    pTag.innerHTML = "Add Chess Board Number - " + count;
+    pTag.innerHTML = "Add Chess Board Number - " + tableNumber;
     // add the <p> tag to the Log Section
     logSection.appendChild(pTag);
 
@@ -69,7 +72,10 @@ export default function generateTableOfSizeN(n, count) {
     scrollToBottom(logSection);
 }
 
-// scroll to the bottom of a section
+/**
+ * Scroll to the bottom of the given node
+ * @param {HTMLElement} node
+ */
 function scrollToBottom(node) {
     node.scrollTop = node.scrollHeight;
 }

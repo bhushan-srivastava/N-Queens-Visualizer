@@ -1,22 +1,25 @@
 "use strict"
 
-const algorithmVisualizerSection = document.getElementById("algorithm-visualizer-section"); // Algorithm Visualizer Section
-const nQueensVisualizerSection = document.getElementById("n-queens-visualizer-section"); // N Queens Visualizer Section
-const logSection = document.getElementById("log-section"); // Log Section
+/** Algorithm Visualizer Section */
+const algorithmVisualizerSection = document.getElementById("algorithm-visualizer-section");
+/** N Queens Visualizer Section */
+const nQueensVisualizerSection = document.getElementById("n-queens-visualizer-section");
+/** Log Section */
+const logSection = document.getElementById("log-section");
 
-/** cloneTableOfSizeN(n, count)
-  * clone the last chess board in the N Queens Visualizer Section and display it
-  * n: size of the chess board
-  * count: table number for the cloned table (used to assign a new id to the cloned table)
-  */
-export default function cloneTableOfSizeN(n, count) {
+/**
+ * Clone the last chess board in the N Queens Visualizer Section and display it
+ * @param {Number} n Size of the chess board
+ * @param {Number} tableNumber table number for the cloned table (used to assign a new id to the cloned table)
+ */
+export default function cloneTableOfSizeN(n, tableNumber) {
     // get the last table and store it
     const node = nQueensVisualizerSection.lastChild;
 
     // clone the table stored in node with a deep copy i.e. clone all the descendants of the table
     const tbl = node.cloneNode(true);
     // assign a new id to the cloned <table> element
-    tbl.setAttribute("id", "chess-board-" + count);
+    tbl.setAttribute("id", "chess-board-" + tableNumber);
 
     // get the old table's <caption> and store it
     const tblOldCaption = tbl.firstChild;
@@ -24,7 +27,7 @@ export default function cloneTableOfSizeN(n, count) {
     // create a new <caption> tag for the cloned <table>
     const tblNewCaption = document.createElement("caption");
     // add the contents of the new <caption>t tag
-    tblNewCaption.innerHTML = "Chessboard - " + count + " of size " + n + " x " + n;
+    tblNewCaption.innerHTML = "Chessboard - " + tableNumber + " of size " + n + " x " + n;
     // replace the old caption with the new caption
     tbl.replaceChild(tblNewCaption, tblOldCaption);
 
@@ -41,7 +44,7 @@ export default function cloneTableOfSizeN(n, count) {
         //get each row and store it
         const row = rows[i];
         // assign a new id to each row
-        row.setAttribute("id", "table-" + count + "-row-" + (i + 1));
+        row.setAttribute("id", "table-" + tableNumber + "-row-" + (i + 1));
 
         // add the list of <td> tags for each row in cells array
         cells.push(row.childNodes)
@@ -53,7 +56,7 @@ export default function cloneTableOfSizeN(n, count) {
         const tdArr = cells[i];
         // get each <td> tag in the tdArr and assign a new id to it
         for (let j = 0; j < tdArr.length; j++) {
-            tdArr[j].setAttribute("id", "table-" + count + "-row-" + (i + 1) + "-col-" + (j + 1));
+            tdArr[j].setAttribute("id", "table-" + tableNumber + "-row-" + (i + 1) + "-col-" + (j + 1));
         }
     }
 
@@ -65,7 +68,7 @@ export default function cloneTableOfSizeN(n, count) {
     // add a class "blue-background" to it
     pTag.setAttribute("class", "blue-background");
     // add the contents of the <p> tag
-    pTag.innerHTML = "Add Chess Board Number - " + count;
+    pTag.innerHTML = "Add Chess Board Number - " + tableNumber;
     // add the <p> tag to the Log Section
     logSection.appendChild(pTag);
 
@@ -76,7 +79,10 @@ export default function cloneTableOfSizeN(n, count) {
     scrollToBottom(logSection);
 }
 
-// scroll to the bottom of a section
+/**
+ * Scroll to the bottom of the given node
+ * @param {HTMLElement} node
+ */
 function scrollToBottom(node) {
     node.scrollTop = node.scrollHeight;
 }
